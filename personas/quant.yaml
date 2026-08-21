@@ -1,0 +1,9 @@
+name: quant
+role: quantitative short-term scoring engine
+
+weights:
+  momentum: 0.25
+  relative_strength: 0.25
+  capital_flow: 0.30
+  turnover: 0.10
+  volatility: 0.10
