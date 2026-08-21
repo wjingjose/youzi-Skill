@@ -1,0 +1,14 @@
+name: technical
+role: A-share trend analyst
+
+focus:
+  - moving_average
+  - price_volume
+  - breakout
+  - pullback
+  - support_resistance
+
+output:
+  - trend_direction
+  - entry_point
+  - stop_loss
