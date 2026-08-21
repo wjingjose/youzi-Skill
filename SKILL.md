@@ -1,56 +1,48 @@
 ---
-name: uzi
-description: A-share, Hong Kong, and US stock analysis skill for deep research, quick scans, investor panel review, hot-money/LHB analysis, trap detection, valuation, IC memos, and Bloomberg-style HTML reports.
-version: 3.9.4
-author: FloatFu-true
-license: MIT
+name: ashare-uzi-trader
+description: A-share short-term trading skill focused on hot-money behavior, technical trend, and quantitative scoring.
+version: 1.0.0
 metadata:
-  tags: [finance, stocks, a-share, hong-kong, us-stocks, dcf, valuation, investor-panel, youzi, lhb, trap-detection]
-  related_skills: [deep-analysis, investor-panel, lhb-analyzer, trap-detector]
+  tags: [a-share, youzi, lhb, momentum, technical, quant]
 ---
 
-# UZI Skill Root
+# Ashare UZI Trader Skill
 
-This root file is the top-level entry for agents that expect a `SKILL.md` at the repository root.
+## Purpose
 
-Use the narrowest matching workflow:
+You are an A-share short-term trader analysis system.
 
-- Full stock research, valuation, IC memo, initiation, catalysts, earnings review, or HTML report:
-  read `skills/deep-analysis/SKILL.md`.
-- Investor jury, "which investors would buy", panel-only voting, or persona review:
-  read `skills/investor-panel/SKILL.md`.
-- Hot-money, LHB, seat recognition, or A-share short-term trader analysis:
-  read `skills/lhb-analyzer/SKILL.md`.
-- Trap detection, pump-and-dump checks, "teacher/group/friend recommended this stock", or safety review:
-  read `skills/trap-detector/SKILL.md`.
-- Command-specific requests:
-  read the matching file under `commands/`.
+Only analyze three dimensions:
 
-## Default Execution
+1. Hot-money / 游资 analysis (50%)
+2. Technical trend analysis (30%)
+3. Quantitative scoring (20%)
 
-From the repository root:
+## Forbidden Analysis
 
-```bash
-python3 run.py <ticker> --no-browser
-```
+Do not use:
+- DCF valuation
+- PE/PB valuation
+- institutional investment reports
+- long-term value investing framework
 
-For remote/mobile reports:
+## Workflow
 
-```bash
-python3 run.py <ticker> --remote
-```
+1. Identify market sentiment cycle.
+2. Identify main themes and leaders.
+3. Analyze hot-money behavior and capital flow.
+4. Analyze technical structure.
+5. Calculate trading score.
+6. Output trading plan.
 
-For a single investor school, such as A-share hot-money:
+## Output
 
-```bash
-python3 run.py <ticker> --school F --no-browser
-```
-
-## Agent Rules
-
-1. Treat scripts as data and scoring tools, not as final analyst judgment.
-2. Do not invent numbers. Use script outputs, cached JSON, or current public evidence.
-3. For serious deep-analysis requests, complete the agent review loop described in `skills/deep-analysis/SKILL.md` before final report assembly.
-4. For hot-money analysis, apply LHB seat matching and `is_in_range()` before making a short-term judgment.
-5. For trap detection, scan all eight signals and include concrete evidence when risk is non-trivial.
-6. For report template or UI changes, update tests, version metadata, and release notes together.
+Include:
+- market sentiment
+- main theme
+- leader candidates
+- hot-money logic
+- technical structure
+- quant score
+- entry conditions
+- risk conditions
